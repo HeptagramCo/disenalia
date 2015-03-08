@@ -95,7 +95,26 @@
             if($this->conn->getConsultar("
                 UPDATE user
                 SET name_user = '$name', email_user = '$email', twitter_user = '$twitter', facebook_user='$facebook', password_user='$password'
-                WHERE name_user = '$name'
+                WHERE name_user = '$user'
+            "))
+            {
+                $_SESSION['user']=$name;
+               Cookies::set("edit","Se ha editado el usuario correctamente","20-s");
+               Redirection::go("user");
+            }else
+            {
+               Cookies::set("alert","Error: No se ha podido editar el usuario intenta de nuevo","20-s");
+               Redirection::go("user");
+            }
+        }
+
+        public function editById($id, $values = array())
+        {
+            extract($values);
+            if($this->conn->getConsultar("
+                UPDATE user
+                SET name_user = '$name', email_user = '$email', twitter_user = '$twitter', facebook_user='$facebook', password_user='$password'
+                WHERE id_user = '$id'
             "))
             {
                Cookies::set("edit","Se ha editado el usuario correctamente","20-s");

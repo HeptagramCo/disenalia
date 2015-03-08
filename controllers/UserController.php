@@ -40,6 +40,27 @@ class UserController{
 	}
 	}
 
+	public function updateUserAction(){
+		$consulta = new UserModel();
+		if($_POST['id']==$_SESSION['id']){
+			return $consulta->edit($_SESSION['user'],[
+				"name" => $_POST['name'],
+				"password" => Security::getEncrypt($_POST['password']),
+				"facebook" => $_POST['facebook'],
+				"twitter" => $_POST['twitter'],
+				"email" => $_POST['email'],
+				
+			]);
+		}
+		return $consulta-> editById($_POST['id'],[
+				"name" => $_POST['name'],
+				"password" => Security::getEncrypt($_POST['password']),
+				"facebook" => $_POST['facebook'],
+				"twitter" => $_POST['twitter'],
+				"email" => $_POST['email'],
+			]);
+	}
+
 	public function editAction(){
 		$consulta = new UserModel();
 		$values = $consulta->get("name_user",$_POST['name']);

@@ -31,6 +31,7 @@ function getUser(user){
 		}
 	)
 	.done(function(data){
+			$("#id").val(data[0].id_user);
 			$("#name").val(data[0].name_user);
 			$("#facebook").val(data[0].facebook_user);
 			$("#twitter").val(data[0].twitter_user);

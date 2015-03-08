@@ -5,7 +5,7 @@
 			foreach ($values as $row) {
 		?>		
 		
-		
+		<input name="id" type="hidden" id="id" value="<?=$row['id_user']?>">
 		<label for="name">Nombre </label><input type="text" placeholder="Nombre" id="name" name="name" value="<?=$row['name_user']?>"/>
 		<label for="password">Contraseña </label><input type="password" placeholder="Contraseña" id="password" name="password" />
 		<label for="facebook">Facebook </label><input type="text" placeholder="Facebook" id="facebook" name="facebook" value="<?=$row['facebook_user']?>" />
