@@ -9,7 +9,7 @@
 			foreach ($rows as $row) {
 		?>
 				<tr id="<?=$row['name_user']?>">
-					<td><?=$row['name_user']?></td><td><?=$row['type_user']?></td><td><?=$row['twitter_user']?></td><td><?=$row['facebook_user']?></td><td><?=$row['email_user']?></td><td><img src="editar.png" class="edit"/><img src="eliminar.png" class="delete"/></td>
+					<td><?=$row['name_user']?></td><td><?=$row['type_user']?></td><td><?=$row['twitter_user']?></td><td><?=$row['facebook_user']?></td><td><?=$row['email_user']?></td><td><a href="#" class="edit"><img src="editar.png"/></a><a href="user/delete?id=<?=$row['id_user']?>" class="delete"><img src="eliminar.png"/></a></td>
 				</tr>
 
 		<?php

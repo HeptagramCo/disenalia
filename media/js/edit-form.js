@@ -1,5 +1,6 @@
 $(function(){
-	$(".edit").click(function(){
+	$(".edit").click(function(e){
+		e.preventDefault();
 		puerto = window.location.port;
 		ruta = "http://" + window.location.hostname + ":" + puerto;
 		var user=$(this).parent().parent().attr("id");
@@ -12,8 +13,6 @@ $(function(){
 	});
 
 });
-
-
 
 
 function getUser(user){

@@ -61,6 +61,19 @@ class UserController{
 			]);
 	}
 
+	public function deleteAction(){
+		$id = $_GET['id'];
+		if($id==$_SESSION['id']){
+			Cookies::set("alert","No puedes eliminar tu usuario","20-s");
+            Redirection::go("admin");
+		}
+		else{
+			$consulta = new UserModel();
+			return $consulta->delete($_GET['id']);
+		}
+		
+	}
+
 	public function editAction(){
 		$consulta = new UserModel();
 		$values = $consulta->get("name_user",$_POST['name']);
