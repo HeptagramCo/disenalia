@@ -9,7 +9,7 @@
 					</div>
 					<div class="cont">
 						<span class="icon-coments"></span>
-						<p>58</p>
+						<p><?=NumberComments::getComments($row['id_post'])?></p>
 					</div>
 				</div>
 				<img src="<?=$row['img_post']?>" alt="">
@@ -24,5 +24,35 @@
 				<div class="postfull"><?=$row['post_post']?></div>
 			</div>
 		</article>
+	<article class="comments">
+		<form action="" method="post">
+			<input type="text" name="name" placeholder="Nombre">
+			<input type="email" name="email" placeholder= "Correo Electronico">
+			<textarea name="message" id="" cols="30" rows="10" placeholder="Mensaje..."></textarea>
+			<input type="hidden" value="<?=$row['id_post']?>" name="id">
+			<input type="submit" name="send">
+		</form>
+		<div class="comments-show">
+			<?php
+				if(isset($comments_values)){
+				foreach ($comments_values as $row) { ?>
+				<div class="">
+					<figure><img src="/media/img/user.png" alt="" /></figure>
+					<div class="">
+						<h1><?=$row['author_comment'] ?></h1>
+						<span>Hace <?=Date::getTiempo($row['date_comment'])?></span>
+						<p>
+							<?=$row['comment']?>
+						</p>
+					</div>
+				</div>
+			<?php }
+		}else{ ?>
+			<h1>Sin comentarios</h1>
+		<?php
+		}
+		?>
+		</div>
+	</article>
 	<?php  } ?>
 </section>

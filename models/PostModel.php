@@ -125,7 +125,7 @@
 
         }
 
-        public function edit($id = null, $values = array())
+		public function edit($id = null, $values = array())
         {
             extract($values);
             if($this->conn->getConsultar("
@@ -142,6 +142,21 @@
 					Redirection::go("post");
             }
         }
+
+		public function editEsp($id = null, $comp)
+		{
+			if($this->conn->getConsultar("
+				UPDATE post
+				SET $comp = $comp+1
+				WHERE id_post = '$id'
+			"))
+			{
+			}else
+			{
+				Cookies::set("alert","Error: Un error en los likes o las vistas. Notifiquelo con el administrador","20-s");
+				Redirection::go("post");
+			}
+		}
 
         public function delete($id)
         {

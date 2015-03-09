@@ -1,6 +1,6 @@
 <section id="blog-post">
 	<?php foreach ($values as $row) {?>
-		<a href="/home/go/?q=<?=$row['id_post']?>" class="src-post">
+		<a href="/go/?q=<?=$row['id_post']?>" class="src-post">
 			<article class="post">
 				<div class="date-comts">
 					<div class="cont">
@@ -9,7 +9,7 @@
 					</div>
 					<div class="cont">
 						<span class="icon-coments"></span>
-						<p>58</p>
+						<p><?=NumberComments::getComments($row['id_post'])?></p>
 					</div>
 				</div>
 				<figure>

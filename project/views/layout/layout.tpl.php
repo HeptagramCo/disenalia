@@ -99,9 +99,6 @@
 				<img src="/media/img/banner_hepta.png" alt="">
 			</figure>
 			<figure class="banners">
-				<img src="/media/img/banner_mtn.png" alt="">
-			</figure>
-			<figure class="banners">
 				<img src="/media/img/banner_anc.png" alt="">
 			</figure>
 		</aside>
@@ -127,6 +124,11 @@
 	</footer>
 	<script src="/media/js/jquery.js"></script>
 	<script src="/media/js/menu.js"></script>
-
+	<div id="msj" class="hide">
+		<figure><img src="" alt=""></figure>
+		<p></p>
+	</div>
+	<script src="/media/js/messages.js"></script>
+	<!-- <script src="/media/js/likes.js"></script>-->
 </body>
 </html>

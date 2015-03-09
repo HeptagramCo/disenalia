@@ -17,6 +17,7 @@ require 'library/View.php';
 require 'models/UserModel.php';
 require 'models/PostModel.php';
 require 'models/CategoryModel.php';
+require 'models/CommentsModel.php';
 
 
 //Llamar al controlador indicado

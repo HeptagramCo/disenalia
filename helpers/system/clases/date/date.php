@@ -1,13 +1,13 @@
-<?php  
-	
+<?php
+
 if (defined('start') || isset($start)) {
 	class Date
-		{	
+		{
 			public static function getDias($fecha_f)
 			{
 				$fecha_i = date("Y-m-d");
 				$dias	= (strtotime($fecha_i)-strtotime($fecha_f))/86400;
-				$dias 	= abs($dias); $dias = floor($dias);	
+				$dias 	= abs($dias); $dias = floor($dias);
 				return $dias;
 			}
 
@@ -15,8 +15,8 @@ if (defined('start') || isset($start)) {
 			{
 				$fecha_i = date("Y-m-d");
 				$dias	= (strtotime($fecha_i)-strtotime($fecha_f))/86400;
-				$dias 	= abs($dias); $dias = floor($dias);	
-				
+				$dias 	= abs($dias); $dias = floor($dias);
+
 				if($dias == 1){
 					$nombre=1;
 					return ""." ".$nombre." "."día";
@@ -33,10 +33,14 @@ if (defined('start') || isset($start)) {
 					$nombre=3;
 					return "+"." ".$nombre." "."meses";
 				}else{
-					return ""." ".$dias." "."días";
+					if($dias == 0){
+						return " unos momentos";
+					}else{
+						return ""." ".$dias." "."días";
+					}
 				}
-				
-				
+
+
 			}
 		}
 
