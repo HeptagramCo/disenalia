@@ -11,175 +11,29 @@
            <tr class="titles-estatics-one">
            		<th>Titulo Post</th>
            		<th>Fecha</th>
-           		<th>Contenido</th>
+           		<th>Visitas</th>
+              <th>Acciones</th>
            </tr>
-           
-           <tr class="colum-content-statics">
-           		<td>
-           			PHP Orientado a Objetos
-           		</td>
-           		<td>
-           			02/05/2014
-           		</td>
-           		<td>
-           			El paradigma de la Programación Orientada a Objetos en PHP con el patrón arquitectónico MVC.
-           		</td>
-           </tr>
-           
-           <tr class="colum-content-statics" >
-           		<td>
-           			Consultas Mysql desde PHP
-           		</td>
-           		<td>
-           			Fecha 2
-           		</td>
-           		<td>
-           			Contenido 2
-           		</td>
-           </tr>
-           
-           <tr class="colum-content-statics">
-           		<td>
-           			Post 3
-           		</td>
-           		<td>
-           			Fecha 3
-           		</td>
-           		<td>
-           			Contenido 3
-           		</td>
-           </tr>
+
+          <?php foreach ($values as $row) { ?>
             <tr class="colum-content-statics">
-           		<td>
-           			Post 3
-           		</td>
-           		<td>
-           			Fecha 3
-           		</td>
-           		<td>
-           			Contenido 3
-           		</td>
-           </tr>
-            <tr class="colum-content-statics">
-           		<td>
-           			Post 3
-           		</td>
-           		<td>
-           			Fecha 3
-           		</td>
-           		<td>
-           			Contenido 3
-           		</td>
-           </tr>
-            <tr class="colum-content-statics">
-           		<td>
-           			Post 3
-           		</td>
-           		<td>
-           			Fecha 3
-           		</td>
-           		<td>
-           			Contenido 3
-           		</td>
-           </tr>
+              <td><?=$row["title_post"]; ?></td>
+              <td><?=$row["date_post"]; ?></td>
+              <td><?=$row["views_post"]; ?></td>
+              <td class="actions-content">
+                <a href="/go/?q=<?=$row['id_post'] ?>">ver</a>
+                <a href="/post/edit/?e=<?=$row['id_post']?>" title="Editar"><span class="icon-pencil"></span></a>
+                <a href="/post/delete/?d=<?=$row['id_post']?>" title="Eliminar"><span class="icon-delete"></span></a>
+              </td>
+            </tr>
+          <?php } ?>
            
            <tr class="paginator-statics">
-           		<td colspan="3">
-           			1 2 3 4 5 6
-           		</td>
+           		
            </tr>
            
            
             
    </table>
-    <article class="content-estatics-two">
-        <table class="content-estatics-one">
-        	<tr class="title-cabeza">
-        		<td colspan="3">
-        			Nuevos Comentarios
-        		</td>
-        	</tr>
-           <tr class="titles-estatics-one">
-           		<th>Nombre</th>
-           		<th>Fecha</th>
-           		<th>Contenido</th>
-           </tr>
-           
-           <tr class="colum-content-statics">
-           		<td>
-           			Post 1
-           		</td>
-           		<td>
-           			Fecha 1
-           		</td>
-           		<td>
-           			Contenido 1
-           		</td>
-           </tr>
-           
-           <tr class="colum-content-statics" >
-           		<td>
-           			Post 2
-           		</td>
-           		<td>
-           			Fecha 2
-           		</td>
-           		<td>
-           			Contenido 2
-           		</td>
-           </tr>
-           
-           <tr class="colum-content-statics">
-           		<td>
-           			Post 3
-           		</td>
-           		<td>
-           			Fecha 3
-           		</td>
-           		<td>
-           			Contenido 3
-           		</td>
-           </tr>
-            <tr class="colum-content-statics">
-           		<td>
-           			Post 3
-           		</td>
-           		<td>
-           			Fecha 3
-           		</td>
-           		<td>
-           			Contenido 3
-           		</td>
-           </tr>
-            <tr class="colum-content-statics">
-           		<td>
-           			Post 3
-           		</td>
-           		<td>
-           			Fecha 3
-           		</td>
-           		<td>
-           			Contenido 3
-           		</td>
-           </tr>
-            <tr class="colum-content-statics">
-           		<td>
-           			Post 3
-           		</td>
-           		<td>
-           			Fecha 3
-           		</td>
-           		<td>
-           			Contenido 3
-           		</td>
-           </tr>
-           
-           <tr class="paginator-statics">
-           		<td colspan="3">
-           			1 2 3 4 5 6
-           		</td>
-           </tr>
-            
-   </table>
-    </article>
+   
 </section>

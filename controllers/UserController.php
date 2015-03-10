@@ -43,16 +43,17 @@ class UserController{
 	public function updateUserAction(){
 		$consulta = new UserModel();
 		if($_POST['id']==$_SESSION['id']){
-			return $consulta->edit($_SESSION['user'],[
+			return $consulta->edit($_SESSION['user'],$_POST['email'],[
 				"name" => $_POST['name'],
 				"password" => Security::getEncrypt($_POST['password']),
+				"type"=> $_POST['type'],
 				"facebook" => $_POST['facebook'],
 				"twitter" => $_POST['twitter'],
 				"email" => $_POST['email'],
 				
 			]);
 		}
-		return $consulta-> editById($_POST['id'],[
+		return $consulta-> editById($_POST['id'],$_POST['name'],$_POST['email'],[
 				"name" => $_POST['name'],
 				"password" => Security::getEncrypt($_POST['password']),
 				"facebook" => $_POST['facebook'],
@@ -77,6 +78,21 @@ class UserController{
 	public function editAction(){
 		$consulta = new UserModel();
 		$values = $consulta->get("name_user",$_POST['name']);
+		return $values;
+	}
+
+	public function addAction(){
+		if(isset($_SESSION['user']) && $_SESSION['type'] == "admin"){
+				$user = $_SESSION['user'];
+	        	return new View("admin/addUser", ["title"=>"Administra los usuarios | Administrador","user" => $user, "layout" => "on", "nameLayout" => "layout.admin"]);
+	        }else{
+				header('Location:'.Rutas::getDireccion('login'));
+			}
+	}
+
+	public function createUserAction(){
+		$consulta = new UserModel();
+		$values = $consulta->set($_POST['user'],$_POST['email'],$_POST);
 		return $values;
 	}
 

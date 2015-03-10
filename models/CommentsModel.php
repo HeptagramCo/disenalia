@@ -79,7 +79,7 @@
         {
             extract($values);
             if($this->conn->getConsultar("
-                UPDATE user
+                UPDATE comment
                 SET name_user = '$name', email_user = '$email', twitter_user = '$twitter', facebook_user='$facebook', password_user='$password'
                 WHERE name_user = '$name'
             "))
@@ -97,8 +97,8 @@
         public function delete($id)
         {
             if($this->conn->getConsultar("
-                DELETE FROM user
-                WHERE id_user = '$id'
+                DELETE FROM comment
+                WHERE id_comment = '$id'
             ")){
                Cookies::set("delete","Se ha eliminado el usuario correctamente","20-s");
                Redirection::go("admin");

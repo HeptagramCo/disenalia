@@ -11,6 +11,21 @@
             $this->conn = new Consultas();
         }
 
+        public function getTenMostVisited(){
+            $query = $this->conn->getConsultar("
+                    SELECT *
+                    FROM post 
+                    ORDER BY views_post DESC
+                    LIMIT 10
+                ");
+
+            while($row = $query->fetch_array(MYSQLI_ASSOC)){
+                $this->rows[] = $row;
+            }
+
+            return $this->rows;
+        }
+
         public function get($comparate = null, $value = null)
         {
             $query = $this->conn->getConsultar("

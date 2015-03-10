@@ -6,9 +6,22 @@ class InboxController{
 	{
 		if(isset($_SESSION['user']) && $_SESSION['type'] == "admin"){
     		$user = $_SESSION['user'];
-        	return new View("admin/inbox", ["title"=>"Administra los comentarios | Administrador","user" => $user, "layout" => "on", "nameLayout" => "layout.admin"]);
+    		$consulta_comments = new CommentsModel();
+      		$values = $consulta_comments->getAll();
+        	return new View("admin/inbox", ["title"=>"Administra los comentarios | Administrador","user" => $user, "layout" => "on", "nameLayout" => "layout.admin", "values" => $values]);
         }else{
 			header('Location:'.Rutas::getDireccion('login'));
+		}
+	}
+
+	public function deleteAction()
+	{
+		if(isset($_SESSION['user']) && $_SESSION['type'] == "admin"){
+			$comment = $_GET['d'];
+			$consulta = new CommentsModel();
+	    	$consulta->delete($comment);
+	    }else{
+				header('Location:'.Rutas::getDireccion('login'));
 		}
 	}
 }

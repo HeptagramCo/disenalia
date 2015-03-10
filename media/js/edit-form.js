@@ -9,6 +9,11 @@ $(function(){
 	});	
 
 	$("#cancelar").click(function(){
+		$("#id").val("");
+		$("#name").val("");
+		$("#facebook").val("");
+		$("#twitter").val("");
+		$("#email").val("");
 		$("#form-edit").hide();
 	});
 
