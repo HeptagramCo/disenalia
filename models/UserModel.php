@@ -222,11 +222,11 @@
                 WHERE id_user = '$id'
             ")){
                Cookies::set("delete","Se ha eliminado el usuario correctamente","20-s");
-               Redirection::go("admin");
+               Redirection::go("user");
             }else
             {
                Cookies::set("alert","Error: No se ha podido eliminar el usuario intenta de nuevo","20-s");
-              Redirection::go("admin");
+              Redirection::go("user");
             }
         }
     }

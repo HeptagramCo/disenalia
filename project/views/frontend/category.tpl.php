@@ -18,8 +18,8 @@
 						<a class="rds" href="https://www.facebook.com/sharer/sharer.php?u=http://ufaac.com/blog/read/?q=<?=$row['id_post']?>" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span class="icon-facebook"></span></a>
 						<a class="rds" href="http://twitter.com/share?text=UFAAC%20te%20recomendamos%20leer%20el%20siguiente%20post:&amp;url=http://ufaac.com/blog/read/?q=<?=$row['id_post']?>" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><span class="icon-twitter"></span></a>
 						<div class="like-views">
-							<a href="#" class="icns"><span class="icon-heart"></span><p>89</p></a>
-							<a href="#" class="icns"><span class="icon-eye"></span><p>98</p></a>
+							<!-- <a href="<?=$row['id_post']?>" class="icns like_post" ><span class="icon-heart"></span><p><?=$row['likes_post']?></p></a> -->
+							<a href="#" class="icns"><span class="icon-eye"></span><p><?=$row['views_post']?></p></a>
 						</div>
 					</figcaption>
 				</figure>

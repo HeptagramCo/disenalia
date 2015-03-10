@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="description" content="Diseñalia es un blog  de difusión de temas referentes al diseño gráﬁco y sus diversas ramiﬁcaciones.">
 	<title><?=$title?></title>
 	<link rel="stylesheet" href="/media/css/estilos.css">
 	<link rel="stylesheet" href="/media/fonts/icomoon/style.css">
@@ -134,13 +135,13 @@
 			<div class="box-foo">
 				<h1>Síguenos en Redes Sociales</h1>
 				<div class="rds">
-					<a href="" target="_blank"><img src="/media/img/twitter-footer.png" alt=""></a>
-					<a href="" target="_blank"><img src="/media/img/facebook-footer.png" alt=""></a>
+					<a href="https://twitter.com/disenalia" target="_blank"><img src="/media/img/twitter-footer.png" alt=""></a>
+					<a href="https://www.facebook.com/pages/Dise%C3%B1alia/1572348153043000?fref=ts" target="_blank"><img src="/media/img/facebook-footer.png" alt=""></a>
 				</div>
 			</div>
 			<div class="box-foo">
 				<h1>Patrocinador</h1>
-				<a href=""><img src="/media/img/logo-heptagram.png" alt=""></a>
+				<a href="http://heptagram.com.mx"><img src="/media/img/logo-heptagram.png" alt=""></a>
 			</div>
 		</div>
 	</footer>

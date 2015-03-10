@@ -88,7 +88,7 @@ class Request{
 
         if ( ! file_exists($controllerFileName))
         {
-           $error = new View("error404", ["title"=>"Error 404 | Pagina no encontrada"]);
+           $error = new View("error404", ["title"=>"Error 404 | Pagina no encontrada","layout" => "off" ]);
             return $error->execute();
         }
 
@@ -97,7 +97,7 @@ class Request{
         $controller = new $controllerClassName();
 
         if(!method_exists($controller,$actionMethodName)){
-            $error = new View("error404", ["title"=>"R Error 404 | Pagina no encontrada"]);
+            $error = new View("error404", ["title"=>"R Error 404 | Pagina no encontrada", "layout" => "off"]);
             return $error->execute();
         }
 
@@ -122,7 +122,7 @@ class Request{
         }
         else
         {
-            $error = new View("error404", ["title"=>"Error 404 | Pagina no encontrada"]);
+            $error = new View("error404", ["title"=>"Error 404 | Pagina no encontrada", "layout" => "off"]);
             return $error->execute();
         }
     }

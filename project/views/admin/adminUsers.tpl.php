@@ -4,10 +4,10 @@
 <section  id="container-data-post">
 
 	<h1>Administra los Usuarios</h1>
-		<a href="user/add" title="Agregar Usuario"><span class="icon-plus">Agregar Usuario</span></a>
+		<a href="user/add" class="add-user" title="Agregar Usuario">Agregar Usuario</a>
 		<table class="table-content-post">
 		<tr class="reference-table">
-			<td colspan="4">Usuarios</td>
+			<td colspan="6">Usuarios</td>
 		</tr>
 		<tr class="titles-content"><th>Nombre de Usuario</th><th>Tipo de usuario</th><th>Twitter</th><th>Facebook</th><th>e-mail</th><th>Editar/Eliminar</th></tr>
 		<?php
@@ -23,31 +23,34 @@
 						<a href="#" class="edit" title="Editar"><span class="icon-pencil"></span></a>
 						<a href="user/delete?id=<?=$row['id_user']?>" class="delete" title="Eliminar"><span class="icon-delete"></span></a>
 					</td>
-					
+
 				</tr>
 
 		<?php
-			}			
-		?>		
-		</table>		
-		
- 	
+			}
+		?>
+		</table>
+
+
+	<div class="cortina-dialog"></div>
+
 	<div class="dialog" id="form-edit">
+		<span value="Cancelar" class="icon-delete" id="cancelar"></span>
     	<form action="user/update-user" method="post">
     		<input name="id" type="hidden" id="id" value="">
-    		<label for='name'>Nombre </label><input type='text' placeholder='Nombre' id='name' name='name'/>
-			<label for='password'>Contraseña </label><input type='password' placeholder='Contraseña' id='password' name='password'/>
+    		<label for='name'>Nombre </label><input required type='text' placeholder='Nombre' id='name' name='name'/>
+			<label for='password'>Contraseña </label><input required type='password' placeholder='Contraseña' id='password' name='password'/>
 			<label for='type'>Tipo de Usuario </label>
 			<select name="type">
-  				<option value="admin" selected>Admin</option> 
+  				<option value="admin" selected>Admin</option>
   				<option value="editor">Editor</option>
   				<option value="moderador">Moderador</option>
 			</select>
-			<label for='facebook'>Facebook </label><input type='text' placeholder='Facebook' id='facebook' name='facebook' />
-			<label for='twitter'>Twitter </label><input type='text' placeholder='Twitter' id='twitter' name='twitter'/>
-			<label for='email'>email </label><input type='text' placeholder='email' id='email' name='email' />
-			<input type='submit' name='add' value='Actualizar'><input type="button" name="cancelar" value="Cancelar" id="cancelar">
+			<label for='facebook'>Facebook </label><input required type='text' placeholder='Facebook' id='facebook' name='facebook' />
+			<label for='twitter'>Twitter </label><input required type='text' placeholder='Twitter' id='twitter' name='twitter'/>
+			<label for='email'>email </label><input required type='text' placeholder='email' id='email' name='email' />
+			<input type='submit' name='add' value='Actualizar'>
 		</form>
 	</div>
-	
+
 </section>

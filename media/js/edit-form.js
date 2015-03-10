@@ -5,8 +5,9 @@ $(function(){
 		ruta = "http://" + window.location.hostname + ":" + puerto;
 		var user=$(this).parent().parent().attr("id");
 		getUser(user);
+		$(".cortina-dialog").show(400);
 		$("#form-edit").show(400);
-	});	
+	});
 
 	$("#cancelar").click(function(){
 		$("#id").val("");
@@ -14,7 +15,8 @@ $(function(){
 		$("#facebook").val("");
 		$("#twitter").val("");
 		$("#email").val("");
-		$("#form-edit").hide();
+		$("#form-edit").hide(500);
+		$(".cortina-dialog").hide(400);
 	});
 
 });
@@ -23,7 +25,7 @@ $(function(){
 function getUser(user){
 	puerto = window.location.port;
 	ruta = "http://" + window.location.hostname + ":" + puerto;
-	$.ajax(		
+	$.ajax(
 		{
 			type: "POST",
 	        url: ruta + "/user/edit/",
@@ -45,4 +47,3 @@ function getUser(user){
 	)
 	.error(function(){alert("Error")});
 }
-

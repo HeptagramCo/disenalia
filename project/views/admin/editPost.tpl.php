@@ -20,13 +20,13 @@
 		<h1>Editar Post</h1>
 		<form action="" method="post">
 			<?php foreach ($postdata as $row) {?>
-				<input type="text" value="<?=$row['title_post']?>" name="title" placeholder="Titulo Publicacion">
-				<input type="text" value="<?=$row['img_post']?>" name="imgIn" placeholder="Imagen Introductoria URL">
-				<input type="text" value="<?=$row['date_post']?>" name="date" placeholder="Fecha de Publicacion">
+				<input required type="text" value="<?=$row['title_post']?>" name="title" placeholder="Titulo Publicacion">
+				<input required type="text" value="<?=$row['img_post']?>" name="imgIn" placeholder="Imagen Introductoria URL">
+				<input required type="text" value="<?=$row['date_post']?>" name="date" placeholder="Fecha de Publicacion">
 				<label for="Previo" class="label1">Previo</label>
-				<textarea name="prev" id="" cols="30" rows="10"><?=$row['prev_post']?></textarea>
+				<textarea required name="prev" id="" cols="30" rows="10"><?=$row['prev_post']?></textarea>
 				<label for="Post" class="label1">Post</label>
-				<textarea name="post" id="" cols="30" rows="10"><?=$row['post_post']?></textarea>
+				<textarea required name="post" id="" cols="30" rows="10"><?=$row['post_post']?></textarea>
 				<select name="category" id="">
 					<?php foreach ($category as $row2) {?>
 						<option <?php if($row2['id_category'] == $row['id_category']){echo "selected";} ?> value="<?=$row2['id_category']?>"><?=$row2['name_category']?></option>

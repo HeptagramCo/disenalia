@@ -4,7 +4,7 @@
     </h1>
    <table class="content-estatics-one">
         	<tr class="title-cabeza">
-        		<td colspan="3">
+        		<td colspan="4">
         			Post mas visitados
         		</td>
         	</tr>
@@ -27,13 +27,13 @@
               </td>
             </tr>
           <?php } ?>
-           
+
            <tr class="paginator-statics">
-           		
+
            </tr>
-           
-           
-            
+
+
+
    </table>
-   
+
 </section>

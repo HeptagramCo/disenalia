@@ -54,14 +54,14 @@
 	<h1>Agraga un nuevo post</h1>
 	<article class="cont">
 		<form action="" method="post" name="postform">
-			<input type="text" name="title" placeholder="Titulo Publicacion">
-			<input type="text" name="imgIn" placeholder="Imagen Introductoria URL">
-			<input type="text" value="<?=$fecha?>" disabled placeholder="Fecha de Publicacion">
-			<input type="hidden" value="<?=$fecha?>" name="date">
+			<input required type="text" name="title" placeholder="Titulo Publicacion">
+			<input required type="text" name="imgIn" placeholder="Imagen Introductoria URL">
+			<input required type="text" value="<?=$fecha?>" disabled placeholder="Fecha de Publicacion">
+			<input required type="hidden" value="<?=$fecha?>" name="date">
 			<label for="Previo" class="label1">Previo</label>
-			<textarea name="prev" id="" cols="30" rows="10"></textarea>
+			<textarea required name="prev" id="" cols="30" rows="10"></textarea>
 			<label for="Post" class="label1">Post</label>
-			<textarea name="post" id="" cols="30" rows="10"></textarea>
+			<textarea required name="post" id="" cols="30" rows="10"></textarea>
 			<label for="categoria" class="label1">Categoria</label>
 			<select name="category" id="">
 				<?php foreach ($categorys as $row) {?>

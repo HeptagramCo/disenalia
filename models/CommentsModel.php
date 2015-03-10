@@ -75,25 +75,6 @@
             }
         }
 
-        public function edit($user, $values = array())
-        {
-            extract($values);
-            if($this->conn->getConsultar("
-                UPDATE comment
-                SET name_user = '$name', email_user = '$email', twitter_user = '$twitter', facebook_user='$facebook', password_user='$password'
-                WHERE name_user = '$name'
-            "))
-            {
-               Cookies::set("edit","Se ha editado el usuario correctamente","20-s");
-               Redirection::go("user");
-            }else
-            {
-               Cookies::set("alert","Error: No se ha podido editar el usuario intenta de nuevo","20-s");
-               Redirection::go("user");
-            }
-        }
-
-
         public function delete($id)
         {
             if($this->conn->getConsultar("
@@ -101,11 +82,11 @@
                 WHERE id_comment = '$id'
             ")){
                Cookies::set("delete","Se ha eliminado el usuario correctamente","20-s");
-               Redirection::go("admin");
+               Redirection::go("inbox");
             }else
             {
                Cookies::set("alert","Error: No se ha podido eliminar el usuario intenta de nuevo","20-s");
-              Redirection::go("admin");
+              Redirection::go("inbox");
             }
         }
     }

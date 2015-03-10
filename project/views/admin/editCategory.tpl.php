@@ -1,4 +1,4 @@
-<?php 
+<?php
 	if (isset($_POST['add'])) {
 		$consulta = new CategoryModel;
 		return $consulta->edit($category,[
@@ -14,8 +14,8 @@
 		<h1>Agraga nueva categoria</h1>
 		<form action="" method="post">
 			<?php foreach ($categorydata as $row) {?>
-				<input type="text" value="<?=$row['name_category'] ?>" name="name" placeholder="Nombre Categoria">
-				<input type="text" value="<?=$row['description_category'] ?>" name="description" placeholder="Descripcion">
+				<input required type="text" value="<?=$row['name_category'] ?>" name="name" placeholder="Nombre Categoria">
+				<input required type="text" value="<?=$row['description_category'] ?>" name="description" placeholder="Descripcion">
 				<input name="add" type="submit" value="Guardar">
 			<?php } ?>
 		</form>

@@ -46,8 +46,8 @@
 	<h1>Agraga nueva categoria</h1>
 	<article class="cont">
 		<form action="" method="post" name="postform">
-			<input type="text" name="name" placeholder="Nombre Categoria">
-			<input type="text" name="description" placeholder="Descripcion">
+			<input required type="text" name="name" placeholder="Nombre Categoria">
+			<input required type="text" name="description" placeholder="Descripcion">
 			<input type="hidden" name="add">
 			<a href="javascript:document.postform.submit()" class="enviar-form-int"><span class="icon-paper-plane"></span></a>
 		</form>
