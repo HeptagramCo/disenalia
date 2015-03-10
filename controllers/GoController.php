@@ -30,6 +30,6 @@ class GoController{
       $comments_values = $consulta_comments->get("id_post",$cat);
       $consulta_profile = new UserModel();
       $profile = $consulta_profile->get("id_user",$id_user);
-      return new View("frontend/go", ["title" => $title, "layout" => "on", "nameLayout" => "layout","category" => $category ,"oncategory" => "on" ,"values" => $values, "profile" => $profile, "profile_act" => "on", "comments_values" => $comments_values]);
+      return new View("frontend/go", ["title" => $title, "layout" => "on", "nameLayout" => "layout","category" => $category ,"oncategory" => "on" ,"values" => $values, "profile" => $profile, "profile_act" => "on", "comments_values" => $comments_values, "posttop" =>"off"]);
     }
 }

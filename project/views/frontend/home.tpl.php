@@ -1,5 +1,10 @@
 <section id="blog-post">
-	<?php foreach ($values as $row) {?>
+	<?php
+	$contador = 0;
+	foreach ($values as $row) {
+		$contador = $contador + 1;
+		if($contador > 5){
+		?>
 		<a href="/go/?q=<?=$row['id_post']?>" class="src-post">
 			<article class="post">
 				<div class="date-comts">
@@ -28,5 +33,5 @@
 					<?=$row['prev_post']?>
 			</article>
 		</a>
-	<?php  } ?>
+	<?php  }} ?>
 </section>

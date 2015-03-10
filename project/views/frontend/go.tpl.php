@@ -25,18 +25,21 @@
 			</div>
 		</article>
 	<article class="comments">
-		<form action="" method="post">
-			<input type="text" name="name" placeholder="Nombre">
-			<input type="email" name="email" placeholder= "Correo Electronico">
-			<textarea name="message" id="" cols="30" rows="10" placeholder="Mensaje..."></textarea>
-			<input type="hidden" value="<?=$row['id_post']?>" name="id">
-			<input type="submit" name="send">
-		</form>
+		<div class="form">
+			<h1>Deja un comentario</h1>
+			<form action="" method="post">
+				<input type="text" name="name" required  placeholder="Nombre">
+				<input type="email" name="email" required placeholder= "Correo Electronico">
+				<textarea name="message" required id="" cols="30" rows="10" placeholder="Mensaje..."></textarea>
+				<input type="hidden" value="<?=$row['id_post']?>" name="id">
+				<input type="submit" name="send" value="Comentar">
+			</form>
+		</div>
 		<div class="comments-show">
 			<?php
 				if(isset($comments_values)){
 				foreach ($comments_values as $row) { ?>
-				<div class="">
+				<div class="cont">
 					<figure><img src="/media/img/user.png" alt="" /></figure>
 					<div class="">
 						<h1><?=$row['author_comment'] ?></h1>

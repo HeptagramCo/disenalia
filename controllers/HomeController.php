@@ -8,7 +8,7 @@ class HomeController{
     	$values = $consulta -> getFull();
     	$categorymodel = new CategoryModel();
     	$category = $categorymodel->getAll();
-        return new View("frontend/home", ["title" => "Diseñalia | Diseño - Marketing - Programacion", "layout" => "on", "nameLayout" => "layout","category" => $category  ,"values" => $values, "profile_act" => "off"]);
+        return new View("frontend/home", ["title" => "Diseñalia | Diseño - Marketing - Programacion", "layout" => "on", "nameLayout" => "layout","category" => $category  ,"values" => $values, "profile_act" => "off", "posttop" =>"on"]);
     }
 
     public function categoryAction()
@@ -23,7 +23,7 @@ class HomeController{
       }
       $categorymodel = new CategoryModel();
       $category = $categorymodel->getAll();
-        return new View("frontend/category", ["title" => "Diseñalia | ".$incategory, "layout" => "on", "nameLayout" => "layout","category" => $category ,"oncategory" => "on" ,"values" => $values, "profile_act" => "off"]);
+        return new View("frontend/category", ["title" => "Diseñalia | ".$incategory, "layout" => "on", "nameLayout" => "layout","category" => $category ,"oncategory" => "on" ,"values" => $values, "profile_act" => "off", "posttop" =>"off"]);
     }
 
     public function searchAction()
@@ -33,7 +33,7 @@ class HomeController{
       $values = $consulta->search($search);
       $categorymodel = new CategoryModel();
       $category = $categorymodel->getAll();
-        return new View("frontend/search", ["title" => "Diseñalia | ". $search, "layout" => "on", "nameLayout" => "layout","category" => $category ,"oncategory" => "on" ,"values" => $values, "profile_act" => "off", "search_v" => $search]);
+        return new View("frontend/search", ["title" => "Diseñalia | ". $search, "layout" => "on", "nameLayout" => "layout","category" => $category ,"oncategory" => "on" ,"values" => $values, "profile_act" => "off", "search_v" => $search, "posttop" =>"off"]);
     }
 
    public function likeAction()

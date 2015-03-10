@@ -10,19 +10,41 @@
 <body>
 
 	<nav id="menu-home">
-		<img src="/media/img/logo-header.png" alt="">
+		<a href="/"><img src="/media/img/logo-header.png" alt=""></a>
 		<ul class="links">
-			<li><a href="/home">INICIO</a></li>
+			<!--<li><a href="/home">INICIO</a></li>
 			<li><a href="/acerca">ACERCA DE</a></li>
 			<li><a href="/redaccion">REDACCIÓN</a></li>
-			<li><a href="/anunciate">ANÚNCIATE</a></li>
+			<li><a href="/anunciate">ANÚNCIATE</a></li>-->
 		</ul>
 	</nav>
 	<header class="header_front">
 		<figure>
-			<img src="/media/img/logo.png" alt="">
+			<a href="/"><img src="/media/img/logo.png" alt=""></a>
 		</figure>
 	</header>
+
+	<?php
+		if($posttop == "on"){
+	?>
+	<section id="first">
+		<?php
+		$contador = 0;
+		foreach ($values as $row) {
+			$contador = $contador + 1;
+			if($contador < 6){
+			?>
+			<a href="/go/?q=<?=$row['id_post']?>" class="<?php if($contador==1){echo 'this-first';}else{echo 'post-first';}?>">
+				<div class="data">
+					<h1><?=$row['title_post']?></h1>
+					<p><?=$row['prev_post']?></p>
+				</div>
+				<figure>
+					<img src="<?=$row['img_post']?>" alt="">
+				</figure>
+			</a>
+		<?php  }}} ?>
+	</section>
 
 	<main id="container">
 		<section class="box-cont">
@@ -124,6 +146,7 @@
 	</footer>
 	<script src="/media/js/jquery.js"></script>
 	<script src="/media/js/menu.js"></script>
+	<script src="/media/js/basic-animation.js"></script>
 	<div id="msj" class="hide">
 		<figure><img src="" alt=""></figure>
 		<p></p>

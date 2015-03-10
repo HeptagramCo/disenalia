@@ -15,3 +15,8 @@ $(".form-add-category .cerrar").click(function(){
 $("#control-account").click(function(){
 	$(".show-content-user").slideToggle()
 })
+
+
+$(".post-first").hover(function(){
+	$(this).find(".data h1").toggle()
+})

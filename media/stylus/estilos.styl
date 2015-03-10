@@ -48,6 +48,68 @@ body
 		& img
 			width 100%
 
+#first
+	background white
+	box-shadow 0px 0px 5px rgba(0,0,0,.4)
+	margin 0 1.5em 1.5em 1.5em
+	max-width 1600px
+	padding 1em 1em
+	overflow hidden
+	& a.this-first
+		display block
+		text-decoration none
+		& .data
+			background morado
+			color white
+			float left
+			height 350px
+			width 40%
+			& h1
+				color verde_azulado
+				border-bottom 1px solid verde_azulado
+				font-size 1.4em
+				text-align center
+				padding .3em 0
+				margin 1.3em auto
+				width 80%
+			& p
+				margin .3em auto
+				width 80%
+		& figure
+			float left
+			overflow hidden
+			height 350px
+			width 60%
+			& img
+				width 1200px
+	& a.post-first
+		float left
+		position relative
+		overflow hidden
+		height 150px
+		width	25%
+		& .data
+			& h1
+				display none
+				background rgba(45, 0, 110, 0.74)
+				color white
+				text-decoration none
+				position absolute
+				margin 0
+				padding 1em .4em .4em .4em
+				box-sizing border-box
+				font-size 1.4em
+				text-align center
+				height 100%
+				width 100%
+			& p
+				display none
+		& figure
+			width 100%
+			& img
+				width 200%
+
+
 #container
 	background white
 	box-shadow 0px 0px 5px rgba(0,0,0,.4)
@@ -406,7 +468,82 @@ body
 						width 100%
 					& a
 						color morado
-
+		& .comments
+			margin .6em auto
+			padding 2em 0 1em 0
+			max-width 70%
+			& .form
+				background #f3f3f3
+				box-shadow 0px 0px 4px rgba(0,0,0,.5)
+				width 100%
+				& h1
+					background morado
+					color verde_azulado
+					padding .3em 0
+					text-align center
+					width 100%
+				& form
+					text-align center
+					width 100%
+					& input[type="text"],input[type="email"]
+						border none
+						color morado
+						outline none
+						background white
+						box-shadow 0px 0px 3px rgba(0,0,0,.4)
+						font-size 1.2em
+						height 30px
+						margin .4em auto
+						padding 0 .4em
+						width 90%
+					& textarea
+						border none
+						display block
+						color morado
+						outline none
+						background white
+						box-shadow 0px 0px 3px rgba(0,0,0,.4)
+						font-size 1.2em
+						height 150px
+						margin .4em auto
+						padding .6em .4em
+						width 90%
+					& input[type="submit"]
+						background none
+						color morado
+						border 2px solid morado
+						border-radius .4em
+						font-size 1.2em
+						margin .6em 0
+						padding .5em
+						&:hover
+							background morado
+							color white
+						&:active
+							outline none
+							font-size 1.23em
+			& .comments-show
+				margin 1em 0
+				& .cont
+					border-bottom dashed 2px morado
+					padding .5em 0
+					overflow hidden
+					& figure
+						float left
+						width 90px
+						& img
+							width 100%
+					& div
+						float left
+						margin-left 1.6em
+						width 70%
+						& h1
+							color morado
+							margin-bottom .2em
+							font-size 1.4em
+						& span
+							color verde_azulado
+							font-size .9em
 
 footer
 	background morado
