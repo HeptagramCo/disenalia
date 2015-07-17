@@ -4,7 +4,7 @@ class AdminController{
 
 	public function indexAction()
 		{
-			if(isset($_SESSION['user']) && $_SESSION['type'] == "admin"){
+			if(isset($_SESSION['user']) && $_SESSION['type'] == "admin" || $_SESSION['type'] == "editor" || $_SESSION['type'] == "moderador"){
 				$posts = new PostModel();
       			$values = $posts->getTenMostVisited();
 				$user = $_SESSION['user'];

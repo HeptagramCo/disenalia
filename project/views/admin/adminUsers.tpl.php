@@ -38,7 +38,8 @@
 		<span value="Cancelar" class="icon-delete" id="cancelar"></span>
     	<form action="user/update-user" method="post">
     		<input name="id" type="hidden" id="id" value="">
-    		<label for='name'>Nombre </label><input required type='text' placeholder='Nombre' id='name' name='name'/>
+    		<label for="name">Nombre </label><input required type="text" placeholder="Nombre" id="real_name" name="real_name"/>
+    		<label for='name'>User </label><input required type='text' placeholder='Nombre' id='name' name='name'/>
 			<label for='password'>Contraseña </label><input required type='password' placeholder='Contraseña' id='password' name='password'/>
 			<label for='type'>Tipo de Usuario </label>
 			<select name="type">
@@ -49,6 +50,8 @@
 			<label for='facebook'>Facebook </label><input required type='text' placeholder='Facebook' id='facebook' name='facebook' />
 			<label for='twitter'>Twitter </label><input required type='text' placeholder='Twitter' id='twitter' name='twitter'/>
 			<label for='email'>email </label><input required type='text' placeholder='email' id='email' name='email' />
+			<input type="hidden" id="actualname" name="actual_name">
+			<input type="hidden" id="actualemail" name="actual_email">
 			<input type='submit' name='add' value='Actualizar'>
 		</form>
 	</div>

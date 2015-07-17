@@ -38,11 +38,13 @@ function getUser(user){
 	)
 	.done(function(data){
 			$("#id").val(data[0].id_user);
+			$("#real_name").val(data[0].real_name_user);
 			$("#name").val(data[0].name_user);
 			$("#facebook").val(data[0].facebook_user);
 			$("#twitter").val(data[0].twitter_user);
 			$("#email").val(data[0].email_user);
-
+			$("#actualname").val(data[0].name_user);
+			$("#actualemail").val(data[0].email_user);
 		}
 	)
 	.error(function(){alert("Error")});

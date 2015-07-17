@@ -4,7 +4,7 @@ class PostController{
 
 	public function indexAction()
 		{
-			if(isset($_SESSION['user']) && $_SESSION['type'] == "admin"){
+			if(isset($_SESSION['user']) && $_SESSION['type'] == "admin" || $_SESSION['type'] == "editor"){
 				$iduser = $_SESSION['id'];
 				$fecha = date("d/m/Y");
 	    		$user = $_SESSION['user'];
@@ -20,7 +20,7 @@ class PostController{
 
 	public function editAction()
 	{
-		if(isset($_SESSION['user']) && $_SESSION['type'] == "admin"){
+		if(isset($_SESSION['user']) && $_SESSION['type'] == "admin" || $_SESSION['type'] == "editor"){
 			$iduser = $_SESSION['id'];
 			$user = $_SESSION['user'];
 			$post = $_GET['e'];
@@ -36,7 +36,7 @@ class PostController{
 
 	public function deleteAction()
 	{
-		if(isset($_SESSION['user']) && $_SESSION['type'] == "admin"){
+		if(isset($_SESSION['user']) && $_SESSION['type'] == "admin" || $_SESSION['type'] == "editor"){
 			$post = $_GET['d'];
 			$consulta = new PostModel();
 	    	$consulta->delete($post);

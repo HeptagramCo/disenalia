@@ -1,5 +1,4 @@
 <?php
-
 class avatar
 {
    public function get($name)
@@ -40,5 +39,4 @@ class avatar
    }
    }
 }
-
 ?>

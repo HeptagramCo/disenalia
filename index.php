@@ -14,10 +14,11 @@ require 'library/Request.php';
 require 'library/Inflector.php';
 require 'library/Response.php';
 require 'library/View.php';
-require 'models/UserModel.php';
-require 'models/PostModel.php';
-require 'models/CategoryModel.php';
-require 'models/CommentsModel.php';
+
+
+spl_autoload_register(function ($clase) {
+    include 'models/' . $clase . '.php';
+});
 
 
 //Llamar al controlador indicado

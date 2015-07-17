@@ -14,8 +14,8 @@
 				</div>
 				<img src="<?=$row['img_post']?>" alt="">
 				<div class="share">
-					<a class="rds" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://disenalia.mx/home/go/?q=<?=$row['id_post']?>" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span class="icon-facebook"></span></a>
-					<a class="rds" target="_blank" href="http://twitter.com/share?text=Diseñalia.mx: %20te%20recomiendo%20leer%20el%20siguiente%20post:&amp;url=http://disenalia.mx/home/go/?q=<?=$row['id_post']?>" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><span class="icon-twitter"></span></a>
+					<a class="rds" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://disenalia.mx/go/?q=<?=$row['id_post']?>" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span class="icon-facebook"></span></a>
+					<a class="rds" target="_blank" href="http://twitter.com/share?text=Diseñalia.mx: %20te%20recomiendo%20leer%20el%20siguiente%20post:&amp;url=http://disenalia.mx/go/?q=<?=$row['id_post']?>" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><span class="icon-twitter"></span></a>
 				</div>
 			</figure>
 			<div class="content">
@@ -29,7 +29,7 @@
 			<h1>Deja un comentario</h1>
 			<form action="" method="post">
 				<input type="text" name="name" required  placeholder="Nombre">
-				<input type="email" name="email" required placeholder= "Correo Electronico">
+				<input type="email" name="email" required placeholder= "Correo Electrónico">
 				<textarea name="message" required id="" cols="30" rows="10" placeholder="Mensaje..."></textarea>
 				<input type="hidden" value="<?=$row['id_post']?>" name="id">
 				<input type="submit" name="send" value="Comentar">
@@ -51,7 +51,7 @@
 				</div>
 			<?php }
 		}else{ ?>
-			<h1>Sin comentarios</h1>
+			<h1 class="no-comments">Sin comentarios</h1>
 		<?php
 		}
 		?>

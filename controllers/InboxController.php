@@ -4,7 +4,7 @@ class InboxController{
 
 	public function indexAction()
 	{
-		if(isset($_SESSION['user']) && $_SESSION['type'] == "admin"){
+		if(isset($_SESSION['user']) && $_SESSION['type'] == "admin" || $_SESSION['type'] == "moderador"){
     		$user = $_SESSION['user'];
     		$consulta_comments = new CommentsModel();
       		$values = $consulta_comments->getAll();
@@ -16,7 +16,7 @@ class InboxController{
 
 	public function deleteAction()
 	{
-		if(isset($_SESSION['user']) && $_SESSION['type'] == "admin"){
+		if(isset($_SESSION['user']) && $_SESSION['type'] == "admin" || $_SESSION['type'] == "moderador"){
 			$comment = $_GET['d'];
 			$consulta = new CommentsModel();
 	    	$consulta->delete($comment);

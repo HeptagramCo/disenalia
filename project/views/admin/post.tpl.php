@@ -36,7 +36,7 @@
 				<td><?=$row["prev_post"]; ?></td>
 				<td class="actions-content">
 					<a href="/post/edit/?e=<?=$row['id_post']?>" title="Editar"><span class="icon-pencil"></span></a>
-					<a href="/post/delete/?d=<?=$row['id_post']?>" title="Eliminar"><span class="icon-delete"></span></a>
+					<a title="Eliminar" onClick="Validate(<?=$row['id_post']?>)" class="delete-post"><span class="icon-delete"></span></a>
 				</td>
 			</tr>
 			<?php
@@ -50,6 +50,7 @@
 
 <section class="form-add-post">
 	<a href="javascript:document.postform.submit()" class="enviar-form"><span class="icon-paper-plane"></span></a>
+	<a href="" class="full"><span class="ion-arrow-expand"></span></a>
 	<span class="cerrar"><span class="icon-delete"></span></span>
 	<h1>Agraga un nuevo post</h1>
 	<article class="cont">

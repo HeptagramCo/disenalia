@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="/media/css/estilos.css">
 	<link rel="stylesheet" href="/media/fonts/icomoon/style.css">
 	<link rel="stylesheet" href="/media/css/menu.css">
+	<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <body>
 
@@ -19,39 +20,39 @@
 			<li><a href="/anunciate">ANÚNCIATE</a></li>-->
 		</ul>
 	</nav>
-	<header class="header_front">
-		<figure>
-			<a href="/"><img src="/media/img/logo.png" alt=""></a>
-		</figure>
-	</header>
 
 	<?php
 		if($posttop == "on"){
 	?>
 	<section id="first">
+		<div class="content">
 		<?php
 		$contador = 0;
 		foreach ($values as $row) {
 			$contador = $contador + 1;
-			if($contador < 6){
+			if($contador < 2){
 			?>
 			<a href="/go/?q=<?=$row['id_post']?>" class="<?php if($contador==1){echo 'this-first';}else{echo 'post-first';}?>">
 				<div class="data">
-					<h1><?=$row['title_post']?></h1>
-					<p><?=$row['prev_post']?></p>
+					<h1 class="b-top"><?=$row['title_post']?></h1>
+					<p >
+						<?=$row['prev_post']?>
+					</p>
+					<span class="b-bott"></span>
 				</div>
 				<figure>
 					<img src="<?=$row['img_post']?>" alt="">
 				</figure>
 			</a>
 		<?php  }}} ?>
+		</div>
 	</section>
 
 	<main id="container">
 		<section class="box-cont">
 			<?=$tpl_content?>
 		</section>
-		<aside class="box-right">
+		<!-- <aside class="box-right">
 			<?php
 				if($profile_act == "on"){
 			?>
@@ -124,23 +125,20 @@
 			<figure class="banners">
 				<img src="/media/img/banner_anc.png" alt="">
 			</figure>
-		</aside>
+		</aside> -->
 	</main>
 	<footer>
 		<div class="cont">
 			<div class="box-foo">
-				<figure><img src="/media/img/logo-header.png" alt=""></figure>
-				<p>Diseñalia es un blog  de difusión de temas referentes al diseño gráﬁco y sus diversas ramiﬁcaciones. Mostrando contenido reelevante princinacional.</p>
+				Todos los derechos reservados © 2015 Heptagram
 			</div>
 			<div class="box-foo">
-				<h1>Síguenos en Redes Sociales</h1>
 				<div class="rds">
-					<a href="https://twitter.com/disenalia" target="_blank"><img src="/media/img/twitter-footer.png" alt=""></a>
-					<a href="https://www.facebook.com/pages/Dise%C3%B1alia/1572348153043000?fref=ts" target="_blank"><img src="/media/img/facebook-footer.png" alt=""></a>
+					<a href="https://twitter.com/disenalia" target="_blank"><span class="ion-social-twitter"></span></a>
+					<a href="https://www.facebook.com/pages/Dise%C3%B1alia/1572348153043000?fref=ts" target="_blank"><span class="ion-social-facebook"></span></a>
 				</div>
 			</div>
 			<div class="box-foo">
-				<h1>Patrocinador</h1>
 				<a href="http://heptagram.com.mx"><img src="/media/img/logo-heptagram.png" alt=""></a>
 			</div>
 		</div>

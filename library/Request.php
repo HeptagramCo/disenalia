@@ -97,7 +97,7 @@ class Request{
         $controller = new $controllerClassName();
 
         if(!method_exists($controller,$actionMethodName)){
-            $error = new View("error404", ["title"=>"R Error 404 | Pagina no encontrada", "layout" => "off"]);
+            $error = new View("error404", ["title"=>"Error 404 | Pagina no encontrada", "layout" => "off"]);
             return $error->execute();
         }
 

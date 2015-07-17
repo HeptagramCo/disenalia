@@ -22,8 +22,10 @@
               <td><?=$row["views_post"]; ?></td>
               <td class="actions-content">
                 <a href="/go/?q=<?=$row['id_post'] ?>">ver</a>
+                <?php if($_SESSION['type'] == "admin" || $_SESSION['type'] == "editor"){ ?>
                 <a href="/post/edit/?e=<?=$row['id_post']?>" title="Editar"><span class="icon-pencil"></span></a>
                 <a href="/post/delete/?d=<?=$row['id_post']?>" title="Eliminar"><span class="icon-delete"></span></a>
+                <?php } ?>
               </td>
             </tr>
           <?php } ?>

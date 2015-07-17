@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="<?=Rutas::getDireccion('media/css/estilos.css') ?>">
 	<link rel="stylesheet" href="/media/fonts/icomoon/style.css">
 	<script src="<?=Rutas::getDireccion('media/js/tinymce/js/tinymce/tinymce.min.js') ?>"></script>
+	<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <body id="body-admin">
 	<header id="cabezera">
@@ -54,6 +55,7 @@
 
 	<nav id="menu-administrator">
 		<ul class="admin-m">
+		<?php if($_SESSION['type'] == "admin"){ ?>
 			<li>
 				<a href="/admin">
 					<span class="icon-home"></span>
@@ -79,6 +81,37 @@
 					<span class="icon-user"></span>
 				</a>
 			</li>
+			<li>
+				<a href="/baner">
+					<span class="ion-images"></span>
+				</a>
+			</li>
+		<?php } ?>
+
+		<?php if($_SESSION['type'] == "editor"){ ?>
+			<li>
+				<a href="/admin">
+					<span class="icon-home"></span>
+				</a>
+			</li>
+			<li>
+				<a href="/post">
+					<span class="icon-pencil"></span>
+				</a>
+			</li>
+		<?php } ?>
+		<?php if($_SESSION['type'] == "moderador"){ ?>
+			<li>
+				<a href="/admin">
+					<span class="icon-home"></span>
+				</a>
+			</li>
+			<li>
+				<a href="/inbox">
+					<span class="icon-coments"></span>
+				</a>
+			</li>
+		<?php } ?>
 		</ul>
 	</nav>
 

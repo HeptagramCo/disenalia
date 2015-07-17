@@ -32,6 +32,7 @@
                 SELECT *
                 FROM post
                 WHERE $comparate = '$value'
+                ORDER BY id_post DESC
             ");
 
             while($row = $query->fetch_array(MYSQLI_ASSOC)){
@@ -63,6 +64,7 @@
             $query = $this->conn->getConsultar("
                 SELECT *
                 FROM post
+                ORDER BY id_post DESC
             ");
 
             while($row = $query->fetch_array(MYSQLI_ASSOC)){
@@ -95,6 +97,7 @@
                 FROM post
                 INNER JOIN category
                 ON category.id_category = post.id_category
+                ORDER BY id_post DESC
             ");
 
             while($row = $query->fetch_array(MYSQLI_ASSOC)){
@@ -112,6 +115,7 @@
                 INNER JOIN category
                 ON category.id_category = post.id_category
                 WHERE $comparate = '$value'
+                ORDER BY id_post DESC
             ");
 
             while($row = $query->fetch_array(MYSQLI_ASSOC)){
